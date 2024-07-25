@@ -15,7 +15,10 @@ def find_words(sentence):
             for line in file:
                 if line.startswith(first_letter) and len(line.strip()) == length:
                     word_list.append(line.strip())
-        new_word = word_list[random.randint(0, len(word_list))]
+        if word_list == []:
+            new_word = word
+        else:
+            new_word = word_list[random.randint(0, len(word_list))]
         new_words.append(new_word)
 
         new_sentence = ' '.join(new_words)
