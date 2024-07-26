@@ -4,7 +4,11 @@ import random
 
 console = Console()
 
-def find_words(sentence):
+def find_words(sentence: str) -> None:
+    """Finds and replaces words in the input sentence with random words of the same starting letter and length.
+    
+    :param sentence: The input sentence to generate words from. """
+
     words = sentence.split()
     new_words = []
     for word in words:
@@ -25,6 +29,8 @@ def find_words(sentence):
     console.print(new_sentence)
 
 def main():
+    """Main function to parse command line arguments and call find_words function."""
+    
     parser = argparse.ArgumentParser()
     parser.add_argument("sentence", help="Sentence to generate words from.")
     args = parser.parse_args()
