@@ -9,7 +9,7 @@ def find_words(sentence: str) -> None:
     
     :param sentence: The input sentence to generate words from. """
 
-    words = sentence.split()
+    words = sentence.lower().split()
     new_words = []
     for word in words:
         first_letter = word[0]
@@ -22,11 +22,11 @@ def find_words(sentence: str) -> None:
         if word_list == []:
             new_word = word
         else:
-            new_word = word_list[random.randint(0, len(word_list))]
+            new_word = word_list[random.randint(0, len(word_list)-1)]
         new_words.append(new_word)
 
         new_sentence = ' '.join(new_words)
-    console.print(new_sentence)
+    return new_sentence
 
 def main():
     """Main function to parse command line arguments and call find_words function."""
@@ -35,7 +35,7 @@ def main():
     parser.add_argument("sentence", help="Sentence to generate words from.")
     args = parser.parse_args()
 
-    find_words(args.sentence)
+    console.print(find_words(args.sentence))
 
 if __name__ == '__main__':
     main()

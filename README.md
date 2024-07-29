@@ -7,6 +7,7 @@
 - [Requirements](#requirements)
 - [Execution](#execution)
 - [Example](#example)
+- [Testing](#testing)
 
 ## Assignment 
 
@@ -22,8 +23,9 @@ The program was written in Python 3.12.4. It uses the following libraries:
  - random
  - argeparse
  - rich
+ - unittest
 
-```random``` and ```argeparse``` are included in the Python standard library. To install ```rich```, run the following command in your terminal:
+```random```, ```argeparse``` and ```unittest``` are included in the Python standard library. To install ```rich```, run the following command in your terminal:
 
 ```pip install rich```
 
@@ -39,3 +41,10 @@ The program will return the new sentence.
 
 ```python scrabble.py "The quick brown fox jumps over the lazy dog"```
 
+## Testing 
+
+To run the test, execute the following command in your terminal:
+
+```python test_scrabble.py```
+
+The program will indicate whether the test has passed or failed.
